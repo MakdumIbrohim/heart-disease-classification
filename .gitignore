@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+
+# Other common Python ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (if not to be tracked)
+# heart.csv  # Uncomment if you don't want to track data files
