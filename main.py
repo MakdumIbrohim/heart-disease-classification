@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
 import pandas as pd
 import numpy as np
 
@@ -17,6 +19,11 @@ model = DecisionTreeClassifier(random_state=42)
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
-print(f'Akurasi: {accuracy_score(y_test, y_pred)}\n')
-print(f'Laporan Klasifikasi:\n{classification_report(y_test, y_pred)}\n')
-print(f'Matriks Kebingungan:\n{confusion_matrix(y_test, y_pred)}')
+
+cm = confusion_matrix(y_test, y_pred)
+plt.figure(figsize=(6,4))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=[0,1], yticklabels=[0,1])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title("Confusion Matrix")
+plt.show()
